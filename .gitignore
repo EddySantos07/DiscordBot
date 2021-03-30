@@ -1,5 +1,8 @@
 node_modules
 
+./Public/dist/bundle.js
+/Public/dist/bundle.js
+
 ./config.js
 config.js
 
