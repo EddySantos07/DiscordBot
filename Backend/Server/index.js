@@ -8,6 +8,12 @@ const port = 3000;
 
 const discord_bot_token = process.env.DISCORD_BOT_TOKEN;
 
+const { Client } = require('discord.js'); /* can communicate with Discord */
+
+const Discord_Bot = new Client; /* instance of the Bot */
+
+// Discord_Bot.login() /* create connection to the Discord API */
+
 app.use(express.static(path.join(__dirname, "/../../Public/dist")));
 
 app.get("/", (req, res) => {
