@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 class App extends Component {
   constructor() {
@@ -8,7 +9,12 @@ class App extends Component {
   }
 
   render() {
-    return <div> Discord Bot </div>;
+    return (
+      <>
+        <div> Discord Bot Dashboard </div>;
+        <Dashboard />
+      </>
+    );
   }
 }
 

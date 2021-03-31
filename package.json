@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode development --watch",
-    "server": "nodemon Backend/Server",
-    "bot": "nodemon Backend/Discord Bot",
-    "ServerBot": "concurrently 'npm run server' 'npm run bot' "
+    "Bot": "nodemon Backend/DiscordBot/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,7 @@
   },
   "homepage": "https://github.com/EddySantos07/DiscordBot#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "express": "^4.17.1",
     "react": "^17.0.2",
