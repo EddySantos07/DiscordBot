@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class App extends React.component {
+class App extends Component {
   constructor() {
     super();
 
@@ -11,3 +11,5 @@ class App extends React.component {
     return <div> Discord Bot </div>;
   }
 }
+
+export default App;

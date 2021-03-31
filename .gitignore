@@ -6,4 +6,8 @@ node_modules
 ./config.js
 config.js
 
+/env/.env
+env/.env
+env/.env
+
 package-lock.json
