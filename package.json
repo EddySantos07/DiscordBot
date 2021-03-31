@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode development --watch",
-    "server": "nodemon Backend/Server"
+    "server": "nodemon Backend/Server",
+    "bot": "nodemon Backend/Discord Bot",
+    "ServerBot": "concurrently 'npm run server' 'npm run bot' "
   },
   "repository": {
     "type": "git",

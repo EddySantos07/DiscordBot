@@ -1,4 +1,6 @@
-const { Discord_Bot } = require("../Server/index.js");
+const { Discord_Bot } = require("../Server/index");
+
+console.log('bot')
 
 Discord_Bot.on("ready", () => {
   console.log(

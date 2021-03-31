@@ -10,8 +10,6 @@ const { Client } = require('discord.js'); /* can communicate with Discord */
 
 const Discord_Bot = new Client; /* instance of the Bot */
 
-module.exports.Discord_Bot = Discord_Bot; 
-
 
 app.use(express.static(path.join(__dirname, "/../../Public/dist")));
 
@@ -22,3 +20,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+module.exports.Discord_Bot = Discord_Bot; 
