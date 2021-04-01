@@ -1,25 +1,26 @@
-import React, { useState, useEffect, useDebugValue } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Dashboard = () => {
-  let [guildMembers, updatedGuildMembers] = useState([]);
+  const [Servers, updatedServers] = useState([]);
 
   useEffect(() => {
     axios
       .get("/bot/guild/members")
       .then((data) => {
-        console.log(datam, "guild memebers");
+        console.log(data, "guild memebers");
+        updatedServers(data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-
-  }, [guildMembers]);
+  }, []);
 
   return (
     <>
-      <div> {guildMembers} </div>
-      <div></div>
+      <div className="DashBoard">
+        
+      </div>
     </>
   );
 };

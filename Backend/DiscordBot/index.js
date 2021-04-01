@@ -1,6 +1,13 @@
 const { Discord_Bot } = require("../Server/index");
 
-const prefix = "$";
+const { YoutubeSrch } = require('./YoutubeSrch/YoutubeSrch');
+
+const prefixs = {
+  "!": "!",
+};
+
+
+const ytsrPrefix = '!';
 
 Discord_Bot.login(
   process.env.DISCORD_BOT_TOKEN
@@ -13,9 +20,11 @@ Discord_Bot.on("ready", () => {
 });
 
 Discord_Bot.on("message", (message) => {
-  console.log(`Author - ${message.author.tag}: ${message.content}`);
+  // console.log(`Author - ${message.author.tag}: ${message.content}`);
   if (message.author.bot) return;
-  if (message.content.startsWith(prefix)) {
+  if (message.content.startsWith(ytsrPrefix) ) {
+    YoutubeSrch( Discord_Bot, message, message.content, ytsrPrefix );
+    return;
   }
 
   if (message.content === "hello") {
@@ -33,7 +42,7 @@ const types_of_methods_and_their_use = {
   "message.guild.members": {
     "has methods":
       "this is a guild memeber manager which has more options to it",
-    "cache": "this is a collection and has additional utility methods",
+    cache: "this is a collection and has additional utility methods",
   },
 
   ".prune": {

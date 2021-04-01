@@ -1,0 +1,27 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  background-color: #3a3e4e;
+  height: 100%;
+}
+
+.Sidebar {
+  grid-area: 1 / 1 / 6 / 2;
+}
+.div2 {
+  grid-area: 1 / 2 / 3 / 4;
+}
+
+.Sidebar {
+  background-color: #2a2c33;
+}
