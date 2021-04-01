@@ -29,11 +29,16 @@ const YoutubeSrch = async (client, message, messageContent, prefix) => {
     .then((video) => {
       console.log(video);
 
-        const firstVideo = video[0];
+      const firstVideo = video[0];
 
       const embed = new MessageEmbed()
         .setTitle(firstVideo.title)
+        .setURL(firstVideo.channel.url)
+        .setDescription(firstVideo.durationFormatted)
         .setImage(firstVideo.thumbnail.url);
+
+        // .setDescription(firstVideo.uploadedAt)
+        // .setDescription(firstVideo.views)
 
       return message.channel.send(embed);
     })

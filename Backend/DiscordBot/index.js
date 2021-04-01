@@ -1,13 +1,16 @@
 const { Discord_Bot } = require("../Server/index");
 
-const { YoutubeSrch } = require('./YoutubeSrch/YoutubeSrch');
+const { YoutubeSrch } = require("./YoutubeSrch/YoutubeSrch");
+
+const { Kick } = require("./DiscordBotMethods/KickPerson");
 
 const prefixs = {
   "!": "!",
 };
 
+const ytsrPrefix = "!";
 
-const ytsrPrefix = '!';
+const kickPrefix = "#";
 
 Discord_Bot.login(
   process.env.DISCORD_BOT_TOKEN
@@ -21,10 +24,17 @@ Discord_Bot.on("ready", () => {
 
 Discord_Bot.on("message", (message) => {
   // console.log(`Author - ${message.author.tag}: ${message.content}`);
+
   if (message.author.bot) return;
-  if (message.content.startsWith(ytsrPrefix) ) {
-    YoutubeSrch( Discord_Bot, message, message.content, ytsrPrefix );
+
+  if (message.content.startsWith(ytsrPrefix)) {
+    YoutubeSrch(Discord_Bot, message, message.content, ytsrPrefix);
     return;
+  }
+
+  if ( message.content.startsWith(kickPrefix) )  {
+    Kick( Discord_Bot, message, message.content, kickPrefix );
+    return
   }
 
   if (message.content === "hello") {
