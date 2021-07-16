@@ -1,4 +1,4 @@
 
-<img align="left" width="500px" desc="DiscordBot" src="Imgs/DiscordBot.png"/>
+<img align="left" width="400px" desc="DiscordBot" src="Imgs/DiscordBot.png"/>
 
 # DiscordBot
