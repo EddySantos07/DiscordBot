@@ -5,10 +5,12 @@ const Kick = (client, message, messageContent, prefix) => {
     .substring(prefix.length)
     .split(/\s+/); // match all white spaces with this regex
 
-    console.log(CMD_NAME, 'command', args,'args')
+    // console.log(CMD_NAME, 'command', args,'args')
 
-  if (!message.member.hasPermission("KICK_MEMBERS")) {
-    return message.reply(" You do not have permissions to do this command!");
+  if (CMD_NAME !== "kick") {
+    return message.channel.send(
+      "make sure you have the right command! are you looking for this? - !kick <usrID>"
+    );
   }
 
   if (CMD_NAME === "kick") {
@@ -18,14 +20,17 @@ const Kick = (client, message, messageContent, prefix) => {
 
     const member = message.guild.members.cache.get(args[0]);
 
+    // console.log(args)
+    // console.log(member)
+
     if (member) {
       member
         .kick()
-        .then((memeber) => {
-          message.channel.send(`${memeber} was kicked.`);
+        .then((member) => {
+          message.channel.send(`${member} was kicked.`);
         })
         .catch((err) => {
-          message.channel.send(`I cannot kick ${memeber}! `);
+          message.channel.send(`I cannot kick ${member}! `);
         });
     } else {
       message.channel.send("That user/member was not found!");

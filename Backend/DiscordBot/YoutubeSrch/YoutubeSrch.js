@@ -9,7 +9,7 @@ const YoutubeSrch = async (client, message, messageContent, prefix) => {
     .substring(prefix.length)
     .split(/\s+/); // match all white spaces with this regex
 
-  console.log(CMD_NAME, "command", args, "args");
+  // console.log(CMD_NAME, "command", args, "args");
 
   if (CMD_NAME !== "youtube") {
     return message.channel.send(
@@ -27,7 +27,7 @@ const YoutubeSrch = async (client, message, messageContent, prefix) => {
 
   YouTube.search(args.join(" "), { limit: 2 })
     .then((video) => {
-      console.log(video);
+      // console.log(video);
 
       const firstVideo = video[0];
 
